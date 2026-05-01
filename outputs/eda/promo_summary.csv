@@ -1,0 +1,8 @@
+promo_bucket,promo_type,promo_channel,order_lines,distinct_orders,revenue,total_discount
+with_promo,percentage,all_channels,127687,111358,2342617243.37,356487840.52
+with_promo,percentage,online,45221,41798,1040869382.65,154483426.23
+with_promo,percentage,email,41576,37728,900632255.19,97007691.08
+with_promo,percentage,social_media,31977,29697,689169237.88,124050461.9
+with_promo,fixed,online,20950,20741,376473741.3,4726550.0
+with_promo,percentage,in_store,8905,6920,85675672.24,12851350.37
+without_promo,,,438353,398972,10995039052.9,0.0

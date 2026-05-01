@@ -1,0 +1,22 @@
+# Python / tooling
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Local OS / editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Binary/source-extraction scratch files
+*.pdf
+page*.png
+
+# Debug or duplicate generated reports
+outputs/eda_report_debug/
