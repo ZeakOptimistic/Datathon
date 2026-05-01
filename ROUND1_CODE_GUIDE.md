@@ -34,6 +34,12 @@ This workspace includes these runnable scripts:
    - Copies the currently recommended file to `outputs/submission_best.csv`.
    - Writes `outputs/forecast_improved_benchmark.md`.
 
+8. `scripts/forecast_cv_tuned.py`
+   - Builds experimental candidates using historical holdout validation only.
+   - Writes `outputs/submission_cv_tuned.csv`.
+   - Writes `outputs/submission_cv_recent_2022.csv`.
+   - Does not overwrite `outputs/submission_best.csv`.
+
 ## Recommended commands
 
 ### Part 1: MCQ
@@ -125,6 +131,20 @@ The known public-score `912428.76513` submission is kept at:
 - `outputs/submission_public_912428.csv`
 
 It should match `outputs/submission_best.csv` after running `scripts/forecast_improved.py`.
+
+### Part 3: Experimental CV-tuned candidates
+
+```powershell
+uv run --with pandas --with numpy python scripts/forecast_cv_tuned.py
+```
+
+This will produce:
+
+- `outputs/submission_cv_tuned.csv`
+- `outputs/submission_cv_recent_2022.csv`
+- `outputs/forecast_cv_tuned_benchmark.md`
+
+Submit `submission_cv_tuned.csv` first if you want to test the next data-driven improvement. Keep `submission_public_912428.csv` as the fallback.
 
 ## Suggested EDA storyline
 

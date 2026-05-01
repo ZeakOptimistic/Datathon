@@ -73,6 +73,14 @@ Optional benchmark:
 uv run --with pandas --with scikit-learn python scripts/forecast_benchmark.py
 ```
 
+Experimental data-driven CV-tuned candidates:
+
+```bash
+uv run --with pandas --with numpy python scripts/forecast_cv_tuned.py
+```
+
+This creates `outputs/submission_cv_tuned.csv` and keeps the known-best backup untouched.
+
 ## Important Notes
 
 - Raw `dataset/*.csv` files are included so the project can be cloned and rerun directly.

@@ -201,6 +201,9 @@ Chứa toàn bộ code chính:
 - `forecast_improved.py`
   - Sinh file submit tốt nhất hiện tại bằng seasonal + weekday + ratio model
 
+- `forecast_cv_tuned.py`
+  - Sinh candidate thử nghiệm tiếp theo bằng historical holdout validation, không dùng leaderboard score
+
 ### `outputs/`
 
 Chứa toàn bộ kết quả đã sinh:
@@ -210,11 +213,14 @@ Chứa toàn bộ kết quả đã sinh:
 - `eda_report/`
 - `forecast_benchmark.md`
 - `forecast_improved_benchmark.md`
+- `forecast_cv_tuned_benchmark.md`
 - `submission_baseline.csv`
 - `submission_blend.csv`
 - `submission_improved.csv`
 - `submission_public_912428.csv`
 - `submission_best.csv`
+- `submission_cv_tuned.csv`
+- `submission_cv_recent_2022.csv`
 
 ---
 
@@ -347,6 +353,7 @@ Xem:
 
 - `outputs/forecast_benchmark.md`
 - `outputs/forecast_improved_benchmark.md`
+- `outputs/forecast_cv_tuned_benchmark.md`
 - `outputs/eda_report/`
 - `ROUND1_CODE_GUIDE.md`
 
@@ -356,6 +363,7 @@ Bắt đầu từ:
 
 - `scripts/forecast_blend.py`
 - `scripts/forecast_improved.py`
+- `scripts/forecast_cv_tuned.py`
 - `scripts/forecast_benchmark.py`
 - `scripts/build_eda_report.py`
 

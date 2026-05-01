@@ -45,3 +45,18 @@ The current generator:
 
 Do not overwrite `outputs/submission_best.csv` with the lower-level scaled/blended candidate that scored `1219493.70666`.
 
+## Experimental Data-Driven Candidate
+
+For the next improvement attempt, run:
+
+```bash
+uv run --with pandas --with numpy python scripts/forecast_cv_tuned.py
+```
+
+Then try:
+
+```text
+outputs/submission_cv_tuned.csv
+```
+
+This file is selected from historical holdout validation and does not replace the `912428.76513` backup.
