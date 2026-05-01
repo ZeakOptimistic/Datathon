@@ -1,62 +1,35 @@
 # Submission Notes
 
-## Current Best Public Candidate
+## Current Kaggle File
 
-Use:
+Submit either file below; they are generated to the same content by the final forecasting script:
 
 ```text
 outputs/submission_best.csv
+outputs/submission_cv_tuned_diag_1122_0878.csv
 ```
 
-Known public score:
+`submission_cv_tuned_diag_1122_0878.csv` is the best current Kaggle result reported by the team.
 
-```text
-912428.76513
-```
-
-Backup:
-
-```text
-outputs/submission_public_912428.csv
-```
-
-## Reproducibility Check
+## Reproduce
 
 Run:
-
-```bash
-uv run --with pandas --with numpy python scripts/forecast_improved.py
-sha256sum outputs/submission_public_912428.csv outputs/submission_best.csv outputs/submission_improved.csv
-```
-
-All three hashes should match:
-
-```text
-f0b353494bac15c90e485bb6ad5f7ddb7236fbe86d0b1361571ba9c3346ff8dd
-```
-
-## Model Summary
-
-The current generator:
-
-- predicts `Revenue` with normalized month/day seasonality plus weekday adjustment
-- uses a recent YoY shrinkage level method for annual scale
-- predicts `COGS` as `Revenue * seasonal COGS/Revenue ratio`
-
-Do not overwrite `outputs/submission_best.csv` with the lower-level scaled/blended candidate that scored `1219493.70666`.
-
-## Experimental Data-Driven Candidate
-
-For the next improvement attempt, run:
 
 ```bash
 uv run --with pandas --with numpy python scripts/forecast_cv_tuned.py
 ```
 
-Then try:
+This writes:
 
 ```text
-outputs/submission_cv_tuned.csv
+outputs/submission_cv_tuned_diag_1122_0878.csv
+outputs/submission_best.csv
+outputs/forecast_cv_tuned_benchmark.md
 ```
 
-This file is selected from historical holdout validation and does not replace the `912428.76513` backup.
+## Model Summary
+
+- Revenue uses normalized month/day seasonality plus weekday adjustment.
+- Annual Revenue level uses recent YoY shrinkage.
+- COGS is predicted as `Revenue * seasonal COGS/Revenue ratio`.
+- Final scales are `Revenue = 1.122` and `COGS = 0.878`.
